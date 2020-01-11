@@ -15,7 +15,7 @@ import "./App.css";
 function App() {
 	return (
 		<BrowserRouter>
-			<div className="container">
+			<div>
 				<nav>
 					<ul>
 						<li>
@@ -30,19 +30,27 @@ function App() {
 					</ul>
 				</nav>
 
-				{/* A <Switch> looks through its children <Route>s and
-					renders the first one that matches the current URL. */}
-				<Switch>
-					<Route path="/about">
-						<About />
-					</Route>
-					<Route path="/users">
-						<Users />
-					</Route>
-					<Route path="/">
-						<Home />
-					</Route>
-				</Switch>
+				<div className="content-container">
+					<div className="route-container">
+						{/* A <Switch> looks through its children <Route>s and
+							renders the first one that matches the current URL. */}
+						<Switch>
+							<Route path="/about">
+								<About />
+							</Route>
+							<Route path="/users">
+								<Users />
+							</Route>
+							<Route path="/">
+								<Home />
+							</Route>
+						</Switch>
+					</div>
+
+					<button onClick={() => console.log("Click Right Button")}>
+						Right Button
+					</button>
+				</div>
 			</div>
 		</BrowserRouter>
 	);
